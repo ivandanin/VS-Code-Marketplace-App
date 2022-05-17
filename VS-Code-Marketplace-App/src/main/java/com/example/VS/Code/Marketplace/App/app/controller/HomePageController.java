@@ -8,14 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomePageController {
-
     private final ProductService productService;
-
     @Autowired
     public HomePageController(ProductService productService) {
         this.productService = productService;
     }
-
     @GetMapping("/")
     public String home(final Model model) {
         model.addAttribute("iAmVariable", "I am HomePage");
