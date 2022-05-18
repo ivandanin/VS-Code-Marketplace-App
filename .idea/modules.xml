@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/VS Code Marketplace App.iml" filepath="$PROJECT_DIR$/.idea/VS Code Marketplace App.iml" />
       <module fileurl="file://$PROJECT_DIR$/VS-Code-Marketplace-App/VS-Code-Marketplace-App.iml" filepath="$PROJECT_DIR$/VS-Code-Marketplace-App/VS-Code-Marketplace-App.iml" />
     </modules>
   </component>
