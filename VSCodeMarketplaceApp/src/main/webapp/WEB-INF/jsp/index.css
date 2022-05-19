@@ -1,0 +1,32 @@
+.logo, .marketPlaceLogoLink {
+    display: inline-block;
+    width: 100px;
+}
+
+.btn {
+    margin: 2px;
+}
+
+ul {
+    list-style-type: none;
+    font-size: 20px;
+}
+
+.nav-link, .publish-extensions, .nav {
+    color: black;
+    size: 16px;
+}
+
+.tab-collection-right {
+    position: absolute;
+    right: 18px;
+}
+
+.nav-link active {
+    background-color: rgb(203, 87, 74);
+    color: white;
+}
+
+.btn-floating {
+    color: black;
+}

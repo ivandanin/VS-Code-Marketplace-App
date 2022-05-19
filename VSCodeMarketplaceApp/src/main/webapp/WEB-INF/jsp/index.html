@@ -1,7 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,17 +71,15 @@
             <ul>
                 <li>
                     <h2>Featured</h2>
-                    
+                    <!-- <button class="carousel-control-prev" type="button">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
 
-        <div class="container">
-            <div class="row">
-                <c:forEach items="${products}" var="product">
-                    <div class="col">
-                        <tags:productCard product="${product}" /> </br>
-                    </div>
-                </c:forEach>
-            </div>
-    </div>
+                    <button class="carousel-control-next" type="button">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button> -->
                 </li>
                 <li>
                     <h2>Most Popular</h2>

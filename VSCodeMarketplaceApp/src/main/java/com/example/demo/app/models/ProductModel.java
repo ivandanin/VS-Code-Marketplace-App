@@ -21,16 +21,24 @@ public class ProductModel {
     @NotNull
     private String version;
     private String owner;
-
     @NotNull
     private String img;
 
-    public ProductModel(String name, String description, String version, String owner, String img) {
+    public ProductModel() {
+    }
+
+  
+
+    public ProductModel(Long id, String name, String description, String version, String owner, String img) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.version = version;
         this.owner = owner;
         this.img = img;
+    }
+
+    public ProductModel(String live_server, String s, String s1, String ritwick_dey, String s2) {
     }
 
     public String getName() {
