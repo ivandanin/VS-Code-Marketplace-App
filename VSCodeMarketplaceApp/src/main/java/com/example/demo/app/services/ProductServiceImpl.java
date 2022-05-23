@@ -21,4 +21,9 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductModel> getAll() {
         return productRepository.getAll();
     }
+
+    @Override
+    public Integer getCount() {
+        return getAll().size();
+    }
 }

@@ -20,8 +20,14 @@ public class HomePageController {
     public String home(final Model model) {
         model.addAttribute("iAmVariable", "I am HomePage");
         model.addAttribute("products", productService.getAll());
-
         return "home";
+    }
+
+    @GetMapping("/allPages")
+    public String getAllProducts(Model model) {
+        model.addAttribute("products", productService.getAll());
+        model.addAttribute("count", productService.getCount());
+        return "allPages";
     }
 
 }
