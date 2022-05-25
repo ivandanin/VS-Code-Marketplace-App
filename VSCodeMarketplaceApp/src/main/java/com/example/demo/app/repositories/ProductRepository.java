@@ -4,6 +4,7 @@ import com.example.demo.app.models.ProductModel;
 
 import java.util.List;
 
-public interface ProductRepository {
-    List<ProductModel> getAll();
+public interface ProductRepository{
+    public List<ProductModel> getAll();
+
 }

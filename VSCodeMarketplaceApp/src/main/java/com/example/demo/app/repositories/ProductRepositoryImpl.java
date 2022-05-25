@@ -22,4 +22,5 @@ public class ProductRepositoryImpl implements ProductRepository{
     public List<ProductModel> getAll() {
         return products;
     }
+
 }

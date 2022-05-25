@@ -8,4 +8,5 @@ public interface ProductService {
     List<ProductModel> getAll();
 
     Integer getCount();
+
 }

@@ -8,9 +8,9 @@ import javax.validation.constraints.NotNull;
 @Table(name = "products")
 public class ProductModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
 
     @NotNull
     @NotEmpty
@@ -29,8 +29,7 @@ public class ProductModel {
 
   
 
-    public ProductModel(Long id, String name, String description, String version, String owner, String img) {
-        this.id = id;
+    public ProductModel( String name, String description, String version, String owner, String img) {
         this.name = name;
         this.description = description;
         this.version = version;
@@ -38,8 +37,7 @@ public class ProductModel {
         this.img = img;
     }
 
-    public ProductModel(String live_server, String s, String s1, String ritwick_dey, String s2) {
-    }
+
 
     public String getName() {
         return name;
