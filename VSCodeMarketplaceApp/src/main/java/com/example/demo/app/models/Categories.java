@@ -1,21 +1,21 @@
 package com.example.demo.app.models;
 
 import com.example.demo.app.models.enums.CategoryEnum;
-import javax.persistence.*;
+//import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "categories")
+//@Entity
+//@Table(name = "categories")
 public class Categories {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private CategoryEnum categoryEnum;
 
-    @OneToMany
+//    @OneToMany
     private List<ProductModel> products = new ArrayList<>();
 
     public Long getId() {

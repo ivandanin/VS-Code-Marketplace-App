@@ -19,15 +19,10 @@
 <body>
   
   <tags:navbar/>
-  <tags:nav2row/>
 
-    <h2 class="iamvar">${iAmVariable}</h2>
     <div class="container">
         </br>
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <tags:search/>
         </br>
 
         <div class="container">
@@ -41,6 +36,7 @@
                         <div class="carousel-inner w-100" role="listbox">
                           <div class="carousel-item active">
                             <div class="row">
+                           
                             <c:forEach items="${products}" var="product">
                                 <tags:productCard product="${product}" /> 
                                 </br>

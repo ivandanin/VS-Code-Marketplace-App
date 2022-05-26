@@ -9,4 +9,6 @@ public interface ProductService {
 
     Integer getCount();
 
+    List<ProductModel> sortByName();
+    List<ProductModel> sortByPublisher();
 }

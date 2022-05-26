@@ -1,33 +1,24 @@
 package com.example.demo.app.models;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+//import javax.persistence.*;
 
-@Entity
-@Table(name = "products")
+//@Entity
+//@Table(name = "products")
 public class ProductModel {
-
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private Long id;
 
-    @NotNull
-    @NotEmpty
     private String name;
 
-    @Column(length = 1000)
+//    @Column(length = 1000)
     private String description;
-    @NotNull
     private String version;
     private String owner;
-    @NotNull
     private String img;
 
     public ProductModel() {
     }
-
-  
 
     public ProductModel( String name, String description, String version, String owner, String img) {
         this.name = name;

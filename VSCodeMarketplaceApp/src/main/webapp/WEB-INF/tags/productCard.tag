@@ -1,8 +1,7 @@
 <%@ attribute name="product" required="true" type="com.example.demo.app.models.ProductModel" %>
 
-
 <div class="col-md-2 px-1">
-  <div class="card mx-1">
+<a class="card mx-1" href="/pdp">
     <img class="card-img-top"
       src="${product.img}"
       alt="Card image cap">
@@ -13,5 +12,5 @@
           <tags:stars/>
         </div>
       </div>
-  </div>
+</a>
 </div>

@@ -11,6 +11,6 @@
             </button>
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
-            <button type="button" class="btn btn-login btn btn-dark" href="/login">Sign in</button>
+           <a type="button" class="btn btn-login btn-dark" href="/login">Sign in</a>
         </div>
       </nav>

@@ -17,30 +17,20 @@
 
 <body>
   <tags:navbar/>
-  <tags:nav2row/>
 
     <div class="container">
         </br>
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <tags:search/>
         </br>
 
         <div class="container">
                 <h2>${count} Results</h2>
-                <label class="text-center border-0" for="dropdown">All categories:</label>
-                <select id="model" class="form-control">
-                  <option value="border-0">- Select category -</option>
-                  <optgroup label="category">
-                      <option>Model</option>
-                  </optgroup>
-                </select>
                 <label class="text-center border-0" for="dropdown">Sort by:</label>
                 <select id="model" class="form-control">
                   <option value="border-0">- Select category -</option>
                   <optgroup label="category">
-                      <option>Model</option>
+                      <option src="${sortByName}">Name</option>
+                      <option src="${sortByPublisher}">Publisher</option>
                   </optgroup>
                 </select>
           <div class="container text-center my-4">

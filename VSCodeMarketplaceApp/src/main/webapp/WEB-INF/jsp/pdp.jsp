@@ -2,8 +2,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
 
-<%@ attribute name="productModel" required="true" type="com.example.demo.app.models.ProductModel" %>
-
 
 <!DOCTYPE html>
 <html lang="en">
