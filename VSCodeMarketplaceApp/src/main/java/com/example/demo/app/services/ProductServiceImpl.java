@@ -25,6 +25,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<ProductModel> getNewest() {
+        return productRepository.getNewest();
+    }
+
+    @Override
     public Integer getCount() {
         return getAll().size();
     }

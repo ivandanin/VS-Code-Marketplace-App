@@ -21,7 +21,8 @@ public class HomePageController {
 
     @GetMapping("/")
     public String home(final Model model) {
-        model.addAttribute("products", productService.getAll());
+        model.addAttribute("products", productService.getAll().subList(0, 6));
+        model.addAttribute("newProducts", productService.getNewest());
         return "home";
     }
 }

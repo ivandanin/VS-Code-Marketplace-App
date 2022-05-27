@@ -24,15 +24,34 @@
         </br>
 
         <div class="container">
-                <h2>${count} Results</h2>
-                <label class="text-center border-0" for="dropdown">Sort by:</label>
+          <h2>${count} Results</h2>
+                <%-- <label class="text-center border-0" for="dropdown">Sort by:</label>
                 <select id="model" class="form-control">
-                  <option value="border-0">- Select category -</option>
+                  <option value="border-0" >- Select category -</option>
                   <optgroup label="category">
-                      <option src="${sortByName}">Name</option>
+                      <option items="${sortByName}">Name</option>
                       <option src="${sortByPublisher}">Publisher</option>
                   </optgroup>
-                </select>
+                </select> --%>
+
+          <div class="btn-group shadow-0">
+            <select name="input" class="select-rnd">
+              <option value="Show all:">Sort by:</option>
+              <option value="Name" src="${sortByName}">Name</option>
+              <option value="Publisher" src="${sortByPublisher}">Publisher</option>
+            </select>
+          
+            <select name="input" class="select-rnd">
+              <option value="Show all:">Select category:</option>
+              <option value="Azure">Azure</option>
+              <option value="Data Science">Data Science</option>
+              <option value="Debuggers">Debuggers</option>
+              <option value="Formatters">Formatters</option>
+              <option value="Extensions">Extensions</option>
+              <option value="Tools">Tools</option>
+            </select>
+          </div>
+                
           <div class="container text-center my-4">
             <div class="row mx-auto my-auto">
               <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
@@ -50,73 +69,7 @@
             </div>
           </div>
 
-          <div class="container text-center my-4">
-            <div class="row mx-auto my-auto">
-              <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-                <div class="carousel-inner w-100" role="listbox">
-                  <div class="carousel-item active">
-                    <div class="row">
-                      <c:forEach items="${products}" var="product">
-                          <tags:productCard product="${product}" /> 
-                          </br>
-                      </c:forEach>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="container text-center my-4">
-            <div class="row mx-auto my-auto">
-              <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-                <div class="carousel-inner w-100" role="listbox">
-                  <div class="carousel-item active">
-                    <div class="row">
-                      <c:forEach items="${products}" var="product">
-                          <tags:productCard product="${product}" /> 
-                          </br>
-                      </c:forEach>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="container text-center my-4">
-            <div class="row mx-auto my-auto">
-              <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-                <div class="carousel-inner w-100" role="listbox">
-                  <div class="carousel-item active">
-                    <div class="row">
-                      <c:forEach items="${products}" var="product">
-                          <tags:productCard product="${product}" /> 
-                          </br>
-                      </c:forEach>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-               
-          <div class="container text-center my-4">
-            <div class="row mx-auto my-auto">
-              <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-                <div class="carousel-inner w-100" role="listbox">
-                  <div class="carousel-item active">
-                    <div class="row">
-                      <c:forEach items="${products}" var="product">
-                          <tags:productCard product="${product}" /> 
-                          </br>
-                      </c:forEach>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
         </div>
     <tags:footer/>
@@ -133,7 +86,7 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 
 
-  <link rel="stylesheet" type="text/css" href="app.css"/>
+  <%-- <link rel="stylesheet" type="text/css" href="app.css"/> --%>
 
 </body>
 </html>

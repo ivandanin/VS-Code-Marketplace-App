@@ -57,7 +57,7 @@
                         <div class="carousel-inner w-100" role="listbox">
                           <div class="carousel-item active">
                             <div class="row">
-                            <c:forEach items="${products}" var="product">
+                            <c:forEach items="${newProducts}" var="product">
                                 <tags:productCard product="${product}" /> 
                                 </br>
                             </c:forEach>
@@ -77,7 +77,7 @@
                         <div class="carousel-inner w-100" role="listbox">
                           <div class="carousel-item active">
                             <div class="row">
-                            <c:forEach items="${products}" var="product">
+                            <c:forEach items="${newProducts}" var="product">
                                 <tags:productCard product="${product}" /> 
                                 </br>
                             </c:forEach>
@@ -113,7 +113,6 @@
         <tags:footer/>
       </div>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
@@ -124,7 +123,5 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 
-
-  <link rel="stylesheet" type="text/css" href="app.css"/>
 </body>
 </html>

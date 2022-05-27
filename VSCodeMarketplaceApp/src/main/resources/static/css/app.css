@@ -77,15 +77,6 @@ ul {
   color: #1163f0;
 }
 
-.category-entry .main-cell {
-  width: 100%;
-  border: 1px solid #eee;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
-  white-space: nowrap;
-  word-wrap: normal;
-}
 
 .category-entry {
   background-color: #e8e8e8;
@@ -108,14 +99,3 @@ ul {
   white-space: nowrap;
   word-wrap: normal;
 }
-
-.dropdown {
-  position: absolute;
-  right: 0;
-  padding: 4px 8px;
-  font-size: 14px;
-}
-
-/* .card {
-  text-decoration: none;
-} */

@@ -8,4 +8,9 @@ import java.util.List;
 public interface ProductRepository {
     List<ProductModel> getAll();
 
+    ProductModel getByName();
+    List<ProductModel> getNewest();
+
+
+
 }

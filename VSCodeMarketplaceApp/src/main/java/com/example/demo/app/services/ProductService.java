@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface ProductService {
     List<ProductModel> getAll();
+    List<ProductModel> getNewest();
+
 
     Integer getCount();
 

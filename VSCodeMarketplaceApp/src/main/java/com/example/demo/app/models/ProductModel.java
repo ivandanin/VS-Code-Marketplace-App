@@ -7,7 +7,8 @@ package com.example.demo.app.models;
 public class ProductModel {
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
+    private int id;
+
 
     private String name;
 
@@ -28,7 +29,24 @@ public class ProductModel {
         this.img = img;
     }
 
+    public ProductModel(int id, String name, String description, String version, String owner, String img) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.version = version;
+        this.owner = owner;
+        this.img = img;
+    }
 
+
+    public int getId() {
+        return id;
+    }
+
+    public ProductModel setId(int id) {
+        this.id = id;
+        return this;
+    }
 
     public String getName() {
         return name;
