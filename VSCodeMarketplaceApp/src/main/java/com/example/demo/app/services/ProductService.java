@@ -13,4 +13,8 @@ public interface ProductService {
 
     List<ProductModel> sortByName();
     List<ProductModel> sortByPublisher();
+
+    ProductModel findByName(String name);
+
+    ProductModel getCurrent(int id);
 }

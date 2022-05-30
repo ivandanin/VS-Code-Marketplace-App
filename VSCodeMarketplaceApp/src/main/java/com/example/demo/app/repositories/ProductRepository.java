@@ -8,7 +8,8 @@ import java.util.List;
 public interface ProductRepository {
     List<ProductModel> getAll();
 
-    ProductModel getByName();
+    ProductModel findByName(String name);
+    ProductModel getCurrent(int id);
     List<ProductModel> getNewest();
 
 

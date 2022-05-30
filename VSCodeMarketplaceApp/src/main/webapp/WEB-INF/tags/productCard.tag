@@ -3,7 +3,7 @@
 <div class="d-flex col-md-2 px-1">
 <a class="card mx-1" 
 style="text-decoration:none; color: black"
-href="/pdp">
+href="/pdp/${product.id}">
     <img class="card-img-top"
       src="${product.img}"
       alt="Card image cap">

@@ -9,7 +9,6 @@ public class ProductModel {
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-
     private String name;
 
 //    @Column(length = 1000)

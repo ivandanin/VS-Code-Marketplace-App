@@ -13,17 +13,9 @@
     <title>Product Details</title>
 </head>
 
-
-
-
-
-
-
-
 <body>
 
       <tags:navbar/>
-
 
     <div class="card shadow-0 border rounded-3">
         <div class="card-body">

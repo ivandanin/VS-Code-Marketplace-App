@@ -47,4 +47,14 @@ public class ProductServiceImpl implements ProductService {
                 .sorted(Comparator.comparing(ProductModel::getOwner))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public ProductModel findByName(String name) {
+        return productRepository.findByName(name);
+    }
+
+    @Override
+    public ProductModel getCurrent(int id) {
+        return productRepository.getCurrent(id);
+    }
 }

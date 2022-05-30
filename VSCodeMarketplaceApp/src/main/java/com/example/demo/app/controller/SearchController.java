@@ -1,18 +1,32 @@
 package com.example.demo.app.controller;
 
 import com.example.demo.app.models.ProductModel;
+import com.example.demo.app.services.SearchService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class SearchController {
 
+    private final SearchService searchService;
+
+    public SearchController(SearchService searchService) {
+        this.searchService = searchService;
+    }
+
     @PostMapping("/search")
-    @ResponseBody
-    public List<ProductModel> search(String input) {
-        return null;
+    public String search(String search, Model model) {
+        String lowerInput = search.toLowerCase().trim();
+
+        List<ProductModel> productsList = searchService.search(lowerInput);
+
+//        if (productsList.size() < 1) {
+//            return "emptyPage";
+//        }
+        model.addAttribute("products", productsList);
+        return "allPages";
     }
 }
