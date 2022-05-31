@@ -5,6 +5,8 @@ import com.example.demo.app.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,17 +23,26 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductModel> getAll() {
-        return productRepository.getAll();
+        return productRepository.findAll();
     }
 
     @Override
     public List<ProductModel> getNewest() {
-        return productRepository.getNewest();
+        List<ProductModel> reversed = new ArrayList<>(productRepository.findAll());
+        Collections.reverse(reversed);
+        return reversed;
+    }
+
+    @Override
+    public ProductModel getCurrent(int id) {
+        return productRepository.findAll().get(id);
     }
 
     @Override
     public List<ProductModel> getFeatured() {
-        return productRepository.getFeatured();
+        List<ProductModel> shuffled = new ArrayList<>(productRepository.findAll());
+        Collections.shuffle(shuffled);
+        return shuffled;
     }
 
     @Override
@@ -56,10 +67,5 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductModel findByName(String name) {
         return productRepository.findByName(name);
-    }
-
-    @Override
-    public ProductModel getCurrent(int id) {
-        return productRepository.getCurrent(id);
     }
 }

@@ -35,7 +35,7 @@
                           <div class="carousel-item active">
                             <div class="row">
                            
-                            <c:forEach items="${products}" var="product">
+                            <c:forEach items="${products}" begin="0" end="5" var="product">
                                 <tags:productCard product="${product}" /> 
                                 </br>
                             </c:forEach>

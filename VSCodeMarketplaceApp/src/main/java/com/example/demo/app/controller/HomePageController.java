@@ -19,7 +19,7 @@ public class HomePageController {
 
     @GetMapping("/")
     public String home(final Model model) {
-        model.addAttribute("products", productService.getAll().subList(0, 6));
+        model.addAttribute("products", productService.getAll());
         model.addAttribute("newProducts", productService.getNewest());
         model.addAttribute("featuredProducts", productService.getFeatured());
         return "home";

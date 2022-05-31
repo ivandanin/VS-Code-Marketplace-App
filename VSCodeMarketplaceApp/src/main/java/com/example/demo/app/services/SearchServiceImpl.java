@@ -21,7 +21,7 @@ public class SearchServiceImpl implements SearchService {
     @Override
     public List<ProductModel> search(String lowerInput) {
 
-        return productRepository.getAll().stream()
+        return productRepository.findAll().stream()
                 .filter(productModel -> productModel.getName().toLowerCase().contains(lowerInput))
                 .collect(Collectors.toList());
     }
