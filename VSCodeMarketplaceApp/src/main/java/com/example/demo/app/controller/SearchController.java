@@ -23,10 +23,11 @@ public class SearchController {
 
         List<ProductModel> productsList = searchService.search(lowerInput);
 
-//        if (productsList.size() < 1) {
-//            return "emptyPage";
-//        }
+        if (productsList.size() < 1) {
+            return "emptyPage";
+        }
         model.addAttribute("products", productsList);
+        model.addAttribute("count", searchService.getCountOfSearched(search));
         return "allPages";
     }
 }

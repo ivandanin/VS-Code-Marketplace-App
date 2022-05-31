@@ -40,24 +40,34 @@
               <option value="Name" src="${sortByName}">Name</option>
               <option value="Publisher" src="${sortByPublisher}">Publisher</option>
             </select>
+
+            <select name="input" class="select-rnd">
+              <option value="Show all:">Select category:</option>
+              <option value="Azure">Azure</option>
+              <option value="Data Science">Data Science</option>
+              <option value="Debuggers">Debuggers</option>
+              <option value="Formatters">Formatters</option>
+              <option value="Extensions">Extensions</option>
+              <option value="Tools">Tools</option>
+            </select>
           </div>
-                
+
           <div class="container text-center my-4">
             <div class="row mx-auto my-auto">
               <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                 <div class="carousel-inner w-100" role="listbox">
                   <div class="carousel-item active">
                     <div class="row">
-                      <c:forEach items="${products}" var="product">
-                          <tags:productCard product="${product}" /> 
-                          </br>
-                      </c:forEach>
+                     <h1>NO PRODUCTS</h1>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+
+
         </div>
     <tags:footer/>
   </div>

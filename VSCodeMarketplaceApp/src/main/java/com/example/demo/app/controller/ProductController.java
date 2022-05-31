@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ProductController {
@@ -27,21 +26,9 @@ public class ProductController {
         return "allPages";
     }
 
-//    @GetMapping("/pdp")
-//    public String getPdp() {
-//        return "pdp";
-//    }
-
     @GetMapping("/pdp/{id}")
     public String getPdp(@PathVariable("id") int id, Model model) {
         model.addAttribute("productModel", productService.getCurrent(id));
         return "pdp";
     }
-
-//    @GetMapping("/pdp/{name}")
-//    public ModelAndView getPdp(@PathVariable("name") String name) {
-//        ModelAndView modelAndView = new ModelAndView("/pdp");
-//        modelAndView.addObject("productModel", productService.findByName(name));
-//        return modelAndView;
-//    }
 }

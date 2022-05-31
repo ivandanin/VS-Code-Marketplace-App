@@ -30,6 +30,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<ProductModel> getFeatured() {
+        return productRepository.getFeatured();
+    }
+
+    @Override
     public Integer getCount() {
         return getAll().size();
     }

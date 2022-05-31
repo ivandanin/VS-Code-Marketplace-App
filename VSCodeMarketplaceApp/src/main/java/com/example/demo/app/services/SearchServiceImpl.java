@@ -5,7 +5,6 @@ import com.example.demo.app.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,5 +24,10 @@ public class SearchServiceImpl implements SearchService {
         return productRepository.getAll().stream()
                 .filter(productModel -> productModel.getName().toLowerCase().contains(lowerInput))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Integer getCountOfSearched(String search) {
+        return search(search).size();
     }
 }

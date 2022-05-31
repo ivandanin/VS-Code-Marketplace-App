@@ -10,8 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VS Code Marketplace Demo App</title>
 
-    <%-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> --%>
-
     <c:url value="/css/app.css" var="jstlCss" />
     <link href="${jstlCss}" rel="stylesheet" />
 
@@ -57,7 +55,7 @@
                         <div class="carousel-inner w-100" role="listbox">
                           <div class="carousel-item active">
                             <div class="row">
-                            <c:forEach items="${newProducts}" var="product">
+                            <c:forEach items="${featuredProducts}" var="product">
                                 <tags:productCard product="${product}" /> 
                                 </br>
                             </c:forEach>
@@ -109,7 +107,6 @@
                 </div>
               </div>
         </div>
-        <tags:filterPart/>
         <tags:footer/>
       </div>
 

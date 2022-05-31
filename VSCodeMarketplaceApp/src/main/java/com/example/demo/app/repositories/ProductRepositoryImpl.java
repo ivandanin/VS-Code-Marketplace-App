@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class ProductRepositoryImpl implements ProductRepository{
@@ -73,6 +74,13 @@ public class ProductRepositoryImpl implements ProductRepository{
         List<ProductModel> reversed = new ArrayList<>(products);
         Collections.reverse(reversed);
         return reversed.subList(0, 6);
+    }
+
+    @Override
+    public List<ProductModel> getFeatured() {
+        List<ProductModel> shuffled = new ArrayList<>(products);
+        Collections.shuffle(products);
+        return shuffled.subList(0, 6);
     }
 
 
