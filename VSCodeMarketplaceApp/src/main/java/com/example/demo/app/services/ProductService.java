@@ -12,7 +12,8 @@ public interface ProductService {
 
     List<ProductModel> sortByName();
     List<ProductModel> sortByPublisher();
-
+    List<ProductModel> sortByDownloads();
+    List<ProductModel> sortByDate();
     ProductModel findByName(String name);
 
     ProductModel getCurrent(int id);

@@ -36,7 +36,7 @@
                                 <tr>
                                     <td class="item-img" id="vss_2"><img class="image-display" alt=""
                                             src="${productModel.img}"
-                                            style="top:0.5px;visibility:visible"></td>
+                                            style="top:0.5px;visibility:visible; max-width:128px"></td>
                                     <td class="item-header">
                                         <div class="item-header-content light">
                                             <h1><span class="ux-item-name">${productModel.name}</span></h1>
@@ -44,32 +44,17 @@
                                                 <div class="ux-item-publisher">
                                                     <h2 role="presentation"><a
                                                             class="ux-item-publisher-link item-banner-focussable-child-item"
-                                                            href="publishers/iyashpal"
-                                                            aria-label="More from Yash Pal publisher"
                                                             style="color:#000000">${productModel.owner}</a></h2>
-                                                </div><a id="review-details" href="#review-details"
-                                                    class="ux-item-review-rating-wrapper"
-                                                    aria-label="Average rating: 0 out of 5. Navigate to user reviews.">
-                                                    <tags:stars/>
+                                                </div><a id="review-details"
+                                                    class="ux-item-review-rating-wrapper">
+                                                    <tags:stars/></a>
                                                         <span class="ux-item-rating-count">
-                                                            (<span>0</span>)</span></span></a><span class="divider"> |
+                                                            (${productModel.downloads})
+                                                        </span><span class="divider"> |
                                                 </span><span class="item-price-category">Free</span>
                                             </div>
                                             <div class="ux-item-shortdesc">${productModel.description}</div>
                                             <div class="ux-item-action">
-                                            <div class="installButtonContainer">
-                                                <div class="ms-Fabric root-38"><span class="ux-oneclick-install-button-container"><a
-                                                            href="vscode:extension/CodeStream.codestream"
-                                                            class="ms-Button ux-button install ms-Button--default root-39" data-is-focusable="true">
-                                                            <div class="ms-Button-flexContainer flexContainer-40">
-                                                                <div class="ms-Button-textContainer textContainer-41">
-                                                                    <div class="ms-Button-label label-43" id="id__0">Install</div>
-                                                                </div>
-                                                            </div>
-                                                        </a></span><span class="installHelpInfo"><a href="https://aka.ms/vscode_extn_install" target="_blank"
-                                                            rel="noreferrer noopener nofollow">Trouble Installing?<i
-                                                                class="bowtie-icon bowtie-navigate-external"></i></a></span></div>
-                                            </div>
                                             <div style="display:none"><input type="text" id="FQN" readonly="" value="CodeStream.codestream"><input type="text"
                                                     id="galleryUrl" readonly="" value="/"><input type="text" id="searchTarget" readonly="" value="VSCode"></div>
                                         </div>

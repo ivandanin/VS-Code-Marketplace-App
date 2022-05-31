@@ -35,7 +35,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductModel getCurrent(int id) {
-        return productRepository.findAll().get(id);
+        return productRepository.findAll().get(id - 1);
     }
 
     @Override
@@ -61,6 +61,22 @@ public class ProductServiceImpl implements ProductService {
         return getAll()
                 .stream()
                 .sorted(Comparator.comparing(ProductModel::getOwner))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ProductModel> sortByDownloads() {
+        return getAll()
+                .stream()
+                .sorted(Comparator.comparing(ProductModel::getDownloads))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ProductModel> sortByDate() {
+        return getAll()
+                .stream()
+                .sorted(Comparator.comparing(ProductModel::getReleaseDateTime))
                 .collect(Collectors.toList());
     }
 

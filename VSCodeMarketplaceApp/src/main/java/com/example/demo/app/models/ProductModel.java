@@ -1,6 +1,7 @@
 package com.example.demo.app.models;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "products")
@@ -16,25 +17,22 @@ public class ProductModel {
     private String version;
     private String owner;
     private String img;
+    private LocalDateTime releaseDateTime;
+    private Integer downloads;
+
 
     public ProductModel() {
     }
 
-    public ProductModel( String name, String description, String version, String owner, String img) {
-        this.name = name;
-        this.description = description;
-        this.version = version;
-        this.owner = owner;
-        this.img = img;
-    }
-
-    public ProductModel(int id, String name, String description, String version, String owner, String img) {
+    public ProductModel(int id, String name, String description, String version, String owner, String img, LocalDateTime releaseDateTime, Integer downloads) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.version = version;
         this.owner = owner;
         this.img = img;
+        this.releaseDateTime = releaseDateTime;
+        this.downloads = downloads;
     }
 
 
@@ -85,5 +83,23 @@ public class ProductModel {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public LocalDateTime getReleaseDateTime() {
+        return releaseDateTime;
+    }
+
+    public ProductModel setReleaseDateTime(LocalDateTime releaseDateTime) {
+        this.releaseDateTime = releaseDateTime;
+        return this;
+    }
+
+    public Integer getDownloads() {
+        return downloads;
+    }
+
+    public ProductModel setDownloads(Integer downloads) {
+        this.downloads = downloads;
+        return this;
     }
 }
