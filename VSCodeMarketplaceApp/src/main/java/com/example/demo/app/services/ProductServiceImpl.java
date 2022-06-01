@@ -60,17 +60,30 @@ public class ProductServiceImpl implements ProductService {
     }
 
     // sorting method
+//    @Override
+//    public List<ProductModel> sortByCriteria(String criteria) {
+//        switch (criteria) {
+//            case "publisher":
+//                return productRepository.findByOrderByOwnerAsc();
+//            case "downloads":
+//               return productRepository.findByOrderByDownloadsDesc();
+//            case "date":
+//               return productRepository.findByOrderByReleaseDateTimeDesc();
+//            case "name":
+//                return productRepository.findByOrderByName();
+//        }
+//        return productRepository.findAll();
+//    }
     @Override
     public List<ProductModel> sortByCriteria(String criteria) {
-        switch (criteria) {
-            case "Publisher":
-                return productRepository.findByOrderByOwnerAsc();
-            case "Downloads":
-               return productRepository.findByOrderByDownloadsDesc();
-            case "Date":
-               return productRepository.findByOrderByReleaseDateTimeDesc();
-            default:
-                return productRepository.findByOrderByName();
+        if ("publisher".equals(criteria)) {
+            return productRepository.findByOrderByOwnerAsc();
+        } else if ("downloads".equals(criteria)) {
+            return productRepository.findByOrderByDownloadsDesc();
+        } else if ("date".equals(criteria)) {
+            return productRepository.findByOrderByReleaseDateTimeDesc();
+        } else {
+            return productRepository.findByOrderByName();
         }
     }
 

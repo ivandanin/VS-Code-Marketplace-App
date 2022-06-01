@@ -1,16 +1,16 @@
-$(".select-sort").change(
+$("#sortBy").change(
     function () {
-        let sortBy = $(this).find("option:selected").val();
+        var sortBy = $(this).find("option:selected").val();
 
         sortBy = sortBy
             ? sortBy
             : "";
 
-        let query = sortBy == ''
-            ? ''
-            : '?select-sort=' + sortBy;
+        var query = sortBy == ""
+            ? ""
+            : "?sortBy=" + sortBy;
 
-        const url = '/all';
+        var url = "/allPages";
 
         window.location.href = url + query;
     }

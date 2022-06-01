@@ -28,7 +28,7 @@ public class ProductController {
 //    }
 
     @GetMapping("/allPages")
-    public String getSorted(@RequestParam(value = "select-sort", required = false, defaultValue = "") String criteria,
+    public String getSorted(@RequestParam(value = "sortBy", required = false, defaultValue = "") String criteria,
         Model model) {
         model.addAttribute("products", productService.sortByCriteria(criteria));
 

@@ -13,6 +13,11 @@
 
   <c:url value="/css/app.css" var="jstlCss" />
     <link href="${jstlCss}" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+        crossorigin="anonymous"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 </head>
 
 <body>
@@ -36,14 +41,14 @@
 
           <div class="btn-group shadow-0">
             <span class="select-sort title">Sort by:</span>
-            <select name="input" class="select-sort" id="select-sort">
-              <option value="Name">Name</option>
-              <option value="Publisher">Publisher</option>
-              <option value="Date">Release Date</option>
-              <option value="Downloads">Downloads</option>
+            <select name="sortBy" class="sortBy" id="sortBy">
+              <option value="name">Name</option>
+              <option value="publisher">Publisher</option>
+              <option value="date">Release Date</option>
+              <option value="downloads">Downloads</option>
             </select>
           </div>
-                
+
           <div class="container text-center my-4">
             <div class="row mx-auto my-auto">
               <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
@@ -67,12 +72,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-    crossorigin="anonymous">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <script type="text/javascript" src="js/sort.js"><script/>
 
 </body>
 </html>
