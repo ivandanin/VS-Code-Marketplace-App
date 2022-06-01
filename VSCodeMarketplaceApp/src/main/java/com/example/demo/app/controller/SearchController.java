@@ -19,8 +19,11 @@ public class SearchController {
 
     @PostMapping("/search")
     public String search(String search, Model model) {
+
+        // using to lowercase to make the search input and the names of products in the same case, to find the most matches
         String lowerInput = search.toLowerCase().trim();
 
+        // the products that are found
         List<ProductModel> productsList = searchService.search(lowerInput);
 
         if (productsList.size() < 1) {

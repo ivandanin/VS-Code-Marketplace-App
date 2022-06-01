@@ -8,15 +8,11 @@ public interface ProductService {
     List<ProductModel> getAll();
     List<ProductModel> getNewest();
     List<ProductModel> getFeatured();
+    List<ProductModel> getMostDownloaded();
     Integer getCount();
-
-    List<ProductModel> sortByName();
-    List<ProductModel> sortByPublisher();
-    List<ProductModel> sortByDownloads();
-    List<ProductModel> sortByDate();
+    List<ProductModel> sortByCriteria(String criteria);
     ProductModel findByName(String name);
 
     ProductModel getCurrent(int id);
-
 
 }

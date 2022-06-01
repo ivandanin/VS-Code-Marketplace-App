@@ -9,7 +9,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Extensions</title>
+  <title>All Products</title>
 
   <c:url value="/css/app.css" var="jstlCss" />
     <link href="${jstlCss}" rel="stylesheet" />
@@ -35,10 +35,12 @@
                 </select> --%>
 
           <div class="btn-group shadow-0">
-            <select name="input" class="select-rnd">
-              <option value="Show all:">Sort by:</option>
-              <option value="Name" src="${sortByName}">Name</option>
-              <option value="Publisher" src="${sortByPublisher}">Publisher</option>
+            <span class="select-sort title">Sort by:</span>
+            <select name="input" class="select-sort" id="select-sort">
+              <option value="Name">Name</option>
+              <option value="Publisher">Publisher</option>
+              <option value="Date">Release Date</option>
+              <option value="Downloads">Downloads</option>
             </select>
           </div>
                 

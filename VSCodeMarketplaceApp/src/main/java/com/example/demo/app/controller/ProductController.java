@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ProductController {
@@ -17,15 +18,26 @@ public class ProductController {
         this.productService = productService;
     }
 
+//    @GetMapping("/allPages")
+//    public String getAllProducts(Model model) {
+//        // rendering all the products in DB
+//        model.addAttribute("products", productService.getAll());
+//
+//
+//        return "allPages";
+//    }
+
     @GetMapping("/allPages")
-    public String getAllProducts(Model model) {
-        model.addAttribute("products", productService.getAll());
+    public String getSorted(@RequestParam(value = "select-sort", required = false, defaultValue = "") String criteria,
+        Model model) {
+        model.addAttribute("products", productService.sortByCriteria(criteria));
+
+        // number of the products in DB
         model.addAttribute("count", productService.getCount());
-//        model.addAttribute("sortByName", productService.sortByName());
-//        model.addAttribute("sortByPublisher", productService.sortByPublisher());
         return "allPages";
     }
 
+    // opening a product details page (PDP) of exact product
     @GetMapping("/pdp/{id}")
     public String getPdp(@PathVariable("id") int id, Model model) {
         model.addAttribute("productModel", productService.getCurrent(id));

@@ -19,9 +19,19 @@ public class HomePageController {
 
     @GetMapping("/")
     public String home(final Model model) {
-        model.addAttribute("products", productService.getAll());
+
+        //most downloaded products
+        model.addAttribute("mostDownloadedProducts", productService.getMostDownloaded());
+
+        //newest products
         model.addAttribute("newProducts", productService.getNewest());
+
+        //featured products
         model.addAttribute("featuredProducts", productService.getFeatured());
+
+        // all products
+        model.addAttribute("products",productService.getAll());
+
         return "home";
     }
 }

@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -34,11 +33,6 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductModel getCurrent(int id) {
-        return productRepository.findAll().get(id - 1);
-    }
-
-    @Override
     public List<ProductModel> getFeatured() {
         List<ProductModel> shuffled = new ArrayList<>(productRepository.findAll());
         Collections.shuffle(shuffled);
@@ -46,38 +40,38 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<ProductModel> getMostDownloaded() {
+        List<ProductModel> mostDownloaded = new ArrayList<>(productRepository.findAll());
+        mostDownloaded.sort(Comparator.comparing(ProductModel::getDownloads));
+        return mostDownloaded;
+    }
+
+
+    // -1, because id in DB starts from 1, but in Java starts from 0
+    @Override
+    public ProductModel getCurrent(int id) {
+        return productRepository.findAll().get(id - 1);
+    }
+
+    // count of all the products
+    @Override
     public Integer getCount() {
         return getAll().size();
     }
 
-    public List<ProductModel> sortByName() {
-        return getAll()
-                .stream()
-                .sorted()
-                .collect(Collectors.toList());
-    }
-
-    public List<ProductModel> sortByPublisher() {
-        return getAll()
-                .stream()
-                .sorted(Comparator.comparing(ProductModel::getOwner))
-                .collect(Collectors.toList());
-    }
-
+    // sorting method
     @Override
-    public List<ProductModel> sortByDownloads() {
-        return getAll()
-                .stream()
-                .sorted(Comparator.comparing(ProductModel::getDownloads))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<ProductModel> sortByDate() {
-        return getAll()
-                .stream()
-                .sorted(Comparator.comparing(ProductModel::getReleaseDateTime))
-                .collect(Collectors.toList());
+    public List<ProductModel> sortByCriteria(String criteria) {
+        switch (criteria) {
+            case "Publisher":
+                return productRepository.findByOrderByOwnerAsc();
+            case "Downloads":
+               return productRepository.findByOrderByDownloadsDesc();
+            case "Date":
+               return productRepository.findByOrderByReleaseDateTimeDesc();
+            default:
+                return productRepository.findByOrderByName();
+        }
     }
 
     @Override

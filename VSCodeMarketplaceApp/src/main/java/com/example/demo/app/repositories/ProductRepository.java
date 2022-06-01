@@ -10,6 +10,11 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends JpaRepository<ProductModel, Integer> {
     List<ProductModel> findAll();
+    List<ProductModel> findByOrderByName();
+    List<ProductModel> findByOrderByDownloadsDesc();
+    List<ProductModel> findByOrderByReleaseDateTimeDesc();
+    List<ProductModel> findByOrderByOwnerAsc();
+
     ProductModel findByName(String name);
 
 }

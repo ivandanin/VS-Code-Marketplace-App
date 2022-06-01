@@ -25,8 +25,9 @@
 
         <div class="container">
                 <div>
-                  <h2>Most Popular  
-                  <a class="see-more" href="/allPages">See more</a> </h2>
+                  <h2>Most Downloaded
+                    <a class="see-more" href="/allPages">See more</a>
+                  </h2>
                            
                   <div class="container text-center my-4">
                     <div class="row mx-auto my-auto">
@@ -35,8 +36,8 @@
                           <div class="carousel-item active">
                             <div class="row">
                            
-                            <c:forEach items="${products}" begin="0" end="5" var="product">
-                                <tags:productCard product="${product}" /> 
+                            <c:forEach items="${mostDownloadedProducts}" begin="0" end="5" var="product">
+                                <tags:productCard product="${product}"/>
                                 </br>
                             </c:forEach>
                           </div>

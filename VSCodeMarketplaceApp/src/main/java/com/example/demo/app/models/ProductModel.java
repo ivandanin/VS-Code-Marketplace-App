@@ -11,8 +11,6 @@ public class ProductModel {
     private int id;
 
     private String name;
-
-//    @Column(length = 1000)
     private String description;
     private String version;
     private String owner;

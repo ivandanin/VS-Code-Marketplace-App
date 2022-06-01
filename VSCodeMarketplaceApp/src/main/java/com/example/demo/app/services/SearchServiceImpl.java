@@ -18,6 +18,8 @@ public class SearchServiceImpl implements SearchService {
         this.productRepository = productRepository;
     }
 
+    // searching for a product or products in the DB
+    // using to lowercase to make the search input and the names of products in the same case, to find the most matches
     @Override
     public List<ProductModel> search(String lowerInput) {
 
@@ -26,6 +28,7 @@ public class SearchServiceImpl implements SearchService {
                 .collect(Collectors.toList());
     }
 
+    // to change the count of products in all products page, depending on the result of the search
     @Override
     public Integer getCountOfSearched(String search) {
         return search(search).size();
