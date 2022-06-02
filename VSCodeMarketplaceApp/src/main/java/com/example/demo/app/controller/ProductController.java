@@ -1,5 +1,6 @@
 package com.example.demo.app.controller;
 
+import com.example.demo.app.services.GitHubService;
 import com.example.demo.app.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,14 +9,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.IOException;
+
 @Controller
 public class ProductController {
 
     private final ProductService productService;
+    private final GitHubService gitHubService;
 
     @Autowired
-    public ProductController(ProductService productService) {
+    public ProductController(ProductService productService, GitHubService gitHubService) {
         this.productService = productService;
+        this.gitHubService = gitHubService;
     }
 
 //    @GetMapping("/allPages")
@@ -39,8 +44,9 @@ public class ProductController {
 
     // opening a product details page (PDP) of exact product
     @GetMapping("/pdp/{id}")
-    public String getPdp(@PathVariable("id") int id, Model model) {
+    public String getPdp(@PathVariable("id") int id, Model model) throws IOException {
         model.addAttribute("productModel", productService.getCurrent(id));
+        model.addAttribute("gitHub", gitHubService.getGitHubInfo(this.productService.getCurrent(id).getRepoName()));
         return "pdp";
     }
 }

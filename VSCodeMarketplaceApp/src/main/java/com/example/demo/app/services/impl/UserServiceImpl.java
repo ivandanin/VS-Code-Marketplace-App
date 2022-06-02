@@ -1,10 +1,11 @@
-package com.example.demo.app.services;
+package com.example.demo.app.services.impl;
 
 import com.example.demo.app.CurrentUser;
 import com.example.demo.app.models.User;
 import com.example.demo.app.models.UserRole;
 import com.example.demo.app.models.serviceModels.LoginServiceModel;
 import com.example.demo.app.repositories.UserRepository;
+import com.example.demo.app.services.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

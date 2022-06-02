@@ -60,6 +60,11 @@
                                                 </span><span class="item-price-category">Free</span>
                                             </div>
                                             <div class="ux-item-shortdesc">${productModel.description}</div>
+                                            <div class="ux-item-git">Number of issues: ${gitHub.numberOfIssues}
+                                            <br>
+                                            Number of pull requests: ${gitHub.numberOfPullRequests}
+                                            <br>
+                                            Last commit date: ${gitHub.lastCommitDate}</div>
                                             <div class="ux-item-action">
                                             <div style="display:none"><input type="text" id="FQN" readonly="" value="CodeStream.codestream"><input type="text"
                                                     id="galleryUrl" readonly="" value="/"><input type="text" id="searchTarget" readonly="" value="VSCode"></div>

@@ -17,12 +17,13 @@ public class ProductModel {
     private String img;
     private LocalDateTime releaseDateTime;
     private Integer downloads;
+    private String repoName;
 
 
     public ProductModel() {
     }
 
-    public ProductModel(int id, String name, String description, String version, String owner, String img, LocalDateTime releaseDateTime, Integer downloads) {
+    public ProductModel(int id, String name, String description, String version, String owner, String img, LocalDateTime releaseDateTime, Integer downloads, String repoName) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -31,6 +32,7 @@ public class ProductModel {
         this.img = img;
         this.releaseDateTime = releaseDateTime;
         this.downloads = downloads;
+        this.repoName = repoName;
     }
 
 
@@ -98,6 +100,15 @@ public class ProductModel {
 
     public ProductModel setDownloads(Integer downloads) {
         this.downloads = downloads;
+        return this;
+    }
+
+    public String getRepoName() {
+        return repoName;
+    }
+
+    public ProductModel setRepoName(String repoName) {
+        this.repoName = repoName;
         return this;
     }
 }
