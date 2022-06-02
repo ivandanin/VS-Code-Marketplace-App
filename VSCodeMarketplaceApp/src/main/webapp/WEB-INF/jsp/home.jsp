@@ -37,18 +37,15 @@
                            
                   <div class="container text-center my-4">
                     <div class="row mx-auto my-auto">
-                      <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                         <div class="carousel-inner w-100" role="listbox">
                           <div class="carousel-item active">
                             <div class="row">
-                           
                             <c:forEach items="${mostDownloadedProducts}" begin="0" end="5" var="product">
                                 <tags:productCard product="${product}"/>
                                 </br>
                             </c:forEach>
                           </div>
                         </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -58,7 +55,6 @@
                   <a class="see-more" href="/allPages">See more</a>                 
                   <div class="container text-center my-4">
                     <div class="row mx-auto my-auto">
-                      <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                         <div class="carousel-inner w-100" role="listbox">
                           <div class="carousel-item active">
                             <div class="row">
@@ -71,14 +67,12 @@
                       </div>
                     </div>
                   </div>
-                </div>
               </div>
               <div>            
                 <h2>New</h2>
                   <a class="see-more" href="/allPages">See more</a>                 
                   <div class="container text-center my-4">
                     <div class="row mx-auto my-auto">
-                      <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                         <div class="carousel-inner w-100" role="listbox">
                           <div class="carousel-item active">
                             <div class="row">
@@ -88,7 +82,6 @@
                             </c:forEach>
                           </div>
                         </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -98,7 +91,6 @@
                   <a class="see-more" href="/allPages">See more</a>                 
                   <div class="container text-center my-4">
                     <div class="row mx-auto my-auto">
-                      <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                         <div class="carousel-inner w-100" role="listbox">
                           <div class="carousel-item active">
                             <div class="row">
@@ -111,7 +103,6 @@
                       </div>
                     </div>
                   </div>
-                </div>
               </div>
         </div>
         <tags:footer/>

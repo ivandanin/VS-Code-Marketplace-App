@@ -23,15 +23,6 @@ public class ProductController {
         this.gitHubService = gitHubService;
     }
 
-//    @GetMapping("/allPages")
-//    public String getAllProducts(Model model) {
-//        // rendering all the products in DB
-//        model.addAttribute("products", productService.getAll());
-//
-//
-//        return "allPages";
-//    }
-
     @GetMapping("/allPages")
     public String getSorted(@RequestParam(value = "sortBy", required = false, defaultValue = "") String criteria,
         Model model) {

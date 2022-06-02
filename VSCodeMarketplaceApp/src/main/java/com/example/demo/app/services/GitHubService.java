@@ -7,6 +7,6 @@ import org.kohsuke.github.GitHub;
 import java.io.IOException;
 
 public interface GitHubService {
-    GitHub connect() throws IOException;
+//    GitHub connect() throws IOException;
     GitHubModel getGitHubInfo(String repoLink) throws IOException;
 }

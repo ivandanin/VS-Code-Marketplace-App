@@ -11,7 +11,6 @@ href="/pdp/${product.id}">
         <h4 class="card-title fs-5">${product.name}</h4>
         <p class="card-text fs-6 fw-light">${product.owner} </br> ${product.description} </p>
         <div>
-          <tags:stars/>
         </div>
       </div>
 </a>

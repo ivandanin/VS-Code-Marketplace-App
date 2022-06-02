@@ -30,17 +30,8 @@
 
         <div class="container">
           <h2>${count} Results</h2>
-                <%-- <label class="text-center border-0" for="dropdown">Sort by:</label>
-                <select id="model" class="form-control">
-                  <option value="border-0" >- Select category -</option>
-                  <optgroup label="category">
-                      <option items="${sortByName}">Name</option>
-                      <option src="${sortByPublisher}">Publisher</option>
-                  </optgroup>
-                </select> --%>
-
           <div class="btn-group shadow-0">
-            <span class="select-sort title">Sort by:</span>
+            <h4>Sort by:</h4>
             <select name="sortBy" class="sortBy" id="sortBy">
               <option value="name">Name</option>
               <option value="publisher">Publisher</option>
@@ -51,7 +42,6 @@
 
           <div class="container text-center my-4">
             <div class="row mx-auto my-auto">
-              <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                 <div class="carousel-inner w-100" role="listbox">
                   <div class="carousel-item active">
                     <div class="row">
@@ -62,7 +52,6 @@
                     </div>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -74,7 +63,31 @@
     crossorigin="anonymous"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/sort.js"><script/>
+
+  <script>
+    $("#sortBy").change(
+        function () {
+            var sortBy = $(this).find("option:selected").val();
+
+            sortBy = sortBy
+                ? sortBy
+                : "";
+
+            var query = sortBy == ""
+                ? ""
+                : "?sortBy=" + sortBy;
+
+            var url = "/allPages";
+
+            window.location.href = url + query;
+        }
+    );
+    $("#sortBy").change(
+            function () {
+                var sortBy = $("#sortBy option:selected").text();
+            }
+        );
+  </script>
 
 </body>
 </html>

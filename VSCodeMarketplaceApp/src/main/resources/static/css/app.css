@@ -40,7 +40,7 @@ ul {
   }
 
   .carousel-inner .carousel-item>div:first-child {
-    display: block;
+    display: flex;
   }
 }
 

@@ -53,17 +53,26 @@
                                                             style="color:#000000">${productModel.owner}</a></h2>
                                                 </div><a id="review-details"
                                                     class="ux-item-review-rating-wrapper">
-                                                    <tags:stars/></a>
+                                                    </a>
                                                         <span class="ux-item-rating-count">
                                                             ${productModel.downloads} downloads
                                                         </span><span class="divider"> |
                                                 </span><span class="item-price-category">Free</span>
                                             </div>
                                             <div class="ux-item-shortdesc">${productModel.description}</div>
-                                            <div class="ux-item-git">Number of issues: ${gitHub.numberOfIssues}
+                                            <div class="ux-item-git">
+                                            <a href=${productModel.repoName}>
+                                                <span class="api-github-response bowtie-icon bowtie-brand-github"></span>
+                                                Link: ${productModel.repoName}
+                                            </a>
                                             <br>
+                                            <span class="api-github-response bowtie-icon bowtie-status-error"></span>
+                                            Number of issues: ${gitHub.numberOfIssues}
+                                            <br>
+                                            <span class="api-github-response bowtie-icon bowtie-tfvc-pull-request"></span>
                                             Number of pull requests: ${gitHub.numberOfPullRequests}
                                             <br>
+                                            <span class="api-github-response bowtie-icon bowtie-status-waiting-fill"></span>
                                             Last commit date: ${gitHub.lastCommitDate}</div>
                                             <div class="ux-item-action">
                                             <div style="display:none"><input type="text" id="FQN" readonly="" value="CodeStream.codestream"><input type="text"

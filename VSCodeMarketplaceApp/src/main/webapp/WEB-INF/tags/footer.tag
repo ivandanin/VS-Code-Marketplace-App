@@ -9,7 +9,7 @@
               </div>
       
           <div class="d-flex flex-column flex-sm-row justify-content-end fs-5">
-            <p>&copy; Ivan Danin</p>
+            <p>&copy; Ivan Danin, 2022</p>
           </div>
 
         </footer>
