@@ -19,11 +19,12 @@ public class ProductModel {
     private Integer downloads;
     private String repoName;
 
+    private String downloadLink;
 
     public ProductModel() {
     }
 
-    public ProductModel(int id, String name, String description, String version, String owner, String img, LocalDateTime releaseDateTime, Integer downloads, String repoName) {
+    public ProductModel(int id, String name, String description, String version, String owner, String img, LocalDateTime releaseDateTime, Integer downloads, String repoName, String downloadLink) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -33,6 +34,7 @@ public class ProductModel {
         this.releaseDateTime = releaseDateTime;
         this.downloads = downloads;
         this.repoName = repoName;
+        this.downloadLink = downloadLink;
     }
 
 
@@ -109,6 +111,15 @@ public class ProductModel {
 
     public ProductModel setRepoName(String repoName) {
         this.repoName = repoName;
+        return this;
+    }
+
+    public String getDownloadLink() {
+        return downloadLink;
+    }
+
+    public ProductModel setDownloadLink(String downloadLink) {
+        this.downloadLink = downloadLink;
         return this;
     }
 }

@@ -43,10 +43,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductModel> getMostDownloaded() {
         List<ProductModel> mostDownloaded = new ArrayList<>(productRepository.findAll());
-        mostDownloaded.sort(Comparator.comparing(ProductModel::getDownloads));
+        mostDownloaded.sort(Comparator.comparing(ProductModel::getDownloads).reversed());
         return mostDownloaded;
     }
-
 
     // -1, because id in DB starts from 1, but in Java starts from 0
     @Override
@@ -61,20 +60,6 @@ public class ProductServiceImpl implements ProductService {
     }
 
     // sorting method
-//    @Override
-//    public List<ProductModel> sortByCriteria(String criteria) {
-//        switch (criteria) {
-//            case "publisher":
-//                return productRepository.findByOrderByOwnerAsc();
-//            case "downloads":
-//               return productRepository.findByOrderByDownloadsDesc();
-//            case "date":
-//               return productRepository.findByOrderByReleaseDateTimeDesc();
-//            case "name":
-//                return productRepository.findByOrderByName();
-//        }
-//        return productRepository.findAll();
-//    }
     @Override
     public List<ProductModel> sortByCriteria(String criteria) {
         if ("publisher".equals(criteria)) {

@@ -6,6 +6,7 @@ import com.example.demo.app.services.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,4 +35,9 @@ public class SearchServiceImpl implements SearchService {
     public Integer getCountOfSearched(String search) {
         return search(search).size();
     }
+
+//    @Transactional
+//    public List<String> getSuggestion(String term) {
+//        return productRepository.findAll().stream().filter(p -> );
+//    }
 }

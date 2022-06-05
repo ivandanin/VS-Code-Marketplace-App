@@ -1,24 +1,31 @@
-alert('hello');
+//alert('hello');
 
+var newDiv;
 
-$("#recipeCarousel").carousel({
-    interval: 10000,
-  });
-
-  $(".carousel .carousel-item").each(function () {
-    var minPerSlide = 3;
-    var next = $(this).next();
-    if (!next.length) {
-      next = $(this).siblings(":first");
+var input = document.getElementById("searchBox");
+var searchForm = document.querySelector(".search-form");
+input.addEventListener("input", function() {
+    var searchedTerm = $(this).val();
+    if(searchedTerm.length <= 3) {
+    return;
     }
-    next.children(":first-child").clone().appendTo($(this));
-
-    for (var i = 0; i < minPerSlide; i++) {
-      next = next.next();
-      if (!next.length) {
-        next = $(this).siblings(":first");
-      }
-
-      next.children(":first-child").clone().appendTo($(this));
+    // clean all elements with newDiv class
+    newDiv.innerHTML = '';
+    var url = '/autocomplete';
+       var data = { term: searchedTerm};
+       $.get(url, data)
+           .done(function (data) {
+               console.log(data)
+               data.forEach(function(element) {
+                newDiv = document.createElement('div');
+                newDiv.classList.add("element")
+                newDiv.innerHTML = element;
+                searchForm.after(newDiv);
+               })
+           })
+           .fail(function (jqXHR) {
+               console.error(jqXHR.responseText);
+        });
     }
-  });
+    )
+

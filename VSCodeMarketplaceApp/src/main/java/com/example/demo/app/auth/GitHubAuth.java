@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class GitHubAuth {
     Scanner scanner = new Scanner(System.in);
 
-    String user = "ivandanin";
-    String pass = scanner.nextLine();
+    String user = "";
+    String pass = "";
 
     public String getUser() {
         return user;
